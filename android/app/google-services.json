@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "24400154473",
+    "firebase_url": "https://sharebear-9052f.firebaseio.com",
+    "project_id": "sharebear-9052f",
+    "storage_bucket": "sharebear-9052f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24400154473:android:175a1fa197f2ec2d",
+        "android_client_info": {
+          "package_name": "com.sharebear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24400154473-vr03anjcm8318hn8bjpuq3rbod9r2n32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAghYzGSg82fkTDPnNv7QFMcu2fZuB_9g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
