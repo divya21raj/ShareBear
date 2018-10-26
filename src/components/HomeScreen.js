@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Platform, StyleSheet } from 'react-native';
+import { View, Text, Platform, StyleSheet } from 'react-native';
 
 
 const instructions = Platform.select({

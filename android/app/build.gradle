@@ -137,8 +137,13 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-google-signin')
+    implementation(project(":react-native-google-signin")){
+        exclude group: "com.google.android.gms" // very important
+    }
     implementation project(':react-native-firebase')
     
+    implementation 'com.google.android.gms:play-services-auth:16.0.1' // should be at least 15.0.0 to work with the most recent APIs
     implementation 'com.google.firebase:firebase-core:16.0.4'
     implementation 'com.google.firebase:firebase-auth:16.0.4'
 

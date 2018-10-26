@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation';
 
 // External Library Imports
 import firebase from 'react-native-firebase';
+import { GoogleSignin} from 'react-native-google-signin';
 
 // Local Imports
 import LoginScreen from './src/components/LoginScreen';
@@ -23,6 +24,7 @@ const RootStack = createStackNavigator(
 export default class App extends Component {
   constructor() {
     super();
+    GoogleSignin.configure();
     this.state = {
       loading: true,
     };
@@ -35,6 +37,7 @@ export default class App extends Component {
    */
   componentDidMount() {
     this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
       this.setState({
         loading: false,
         user,
