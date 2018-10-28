@@ -13,14 +13,13 @@ import {
 } from "react-native";
 
 // External Library imports
-import { Icon, Button, Container, Header, Content, Left, Body, Title, Right, StyleProvider } from 'native-base';
+import { Button, Container, Header, Item, Input, Content, Left, Body, Title, Right, StyleProvider } from 'native-base';
 
 // Local Imports
 import getTheme from '../../native-base-theme/components';
 import platform from '../../native-base-theme/variables/platform';
-import material from '../../native-base-theme/variables/material';
 
-//import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons'
 import Category from './HomeScreen/Category.js'
 
 const { height, width } = Dimensions.get('window')
@@ -50,45 +49,35 @@ export default class HomeScreen extends Component {
         return (
             <Container>
                 <StyleProvider style={getTheme(platform)}>
-                    <Header>
-                        <Left>
-                            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
-                                <Icon name='menu' />
+                    <Container>
+                        <Header noShadow style={{borderBottomWidth: 0, elevation:0}}>
+                            <Left>
+                                <Button transparent onPress={() => this.props.navigation.openDrawer()}>
+                                    <Icon name='md-menu' size={25} color={'white'} />
+                                </Button>
+                            </Left>
+                            <Body>
+                                <Title>ShareBear</Title>
+                            </Body>
+                            <Right />
+                        </Header>
+                        <Header searchBar rounded>
+                            <Item>
+                                <Icon name="ios-search" size={20} color="#ff8821" style={{paddingLeft:10, marginRight: 10 }}/>
+                                <Input placeholder="Search" />
+                            </Item>
+                            <Button transparent>
+                                <Text>Search</Text>
                             </Button>
-                        </Left>
-                        <Body>
-                            <Title>ShareBear</Title>
-                        </Body>
-                        <Right />
-                    </Header>
+                        </Header>
+                    </Container>
                 </StyleProvider>
 
-                <Content contentContainerStyle={styles.container}>
+                <Content>
                     <SafeAreaView style={{ flex: 1 }}>
                         <View style={{ flex: 1 }}>
-                            <View style={{ height: this.startHeaderHeight, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
-                                <View style={{
-                                    flexDirection: 'row', padding: 10,
-                                    backgroundColor: 'white', marginHorizontal: 20,
-                                    shadowOffset: { width: 0, height: 0 },
-                                    shadowColor: 'black',
-                                    shadowOpacity: 0.2,
-                                    elevation: 1,
-                                    marginTop: Platform.OS == 'android' ? 15 : null
-                                }}>
-                                    <Icon name="ios-search" size={20} style={{ marginRight: 10 }} />
-                                    <TextInput
-                                        underlineColorAndroid="transparent"
-                                        placeholder="Try Me"
-                                        placeholderTextColor="grey"
-                                        style={{ flex: 1, fontWeight: '700', backgroundColor: 'white' }}
-                                    />
-                                </View>
-                            </View>
-                            <ScrollView
-                                scrollEventThrottle={16}
-                            >
-                                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+                            <ScrollView scrollEventThrottle={16}>
+                                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 0 }}>
                                     <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
                                         What can we help you find?
                                     </Text>
