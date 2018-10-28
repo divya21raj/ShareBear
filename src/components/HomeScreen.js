@@ -7,7 +7,6 @@ import {
     SafeAreaView,
     TextInput,
     Platform,
-    StatusBar,
     ScrollView,
     Image,
     Dimensions
