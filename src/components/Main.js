@@ -1,6 +1,6 @@
 // Library Imports
 import React, {Component} from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
 
 // External Library Imports
 import firebase from 'react-native-firebase';
@@ -9,17 +9,32 @@ import { GoogleSignin} from 'react-native-google-signin';
 // Local Imports
 import LoginScreen from './LoginScreen';
 import HomeScreen from './HomeScreen';
+import DrawerContent from './DrawerContent';
 
 
 // The Root of our Stack Navigation
-const RootStack = createStackNavigator(
-  {
-    Home: HomeScreen
+const Drawer = createDrawerNavigator({
+        // For each screen that you can navigate to, create a new entry like this:
+        Home: {
+            screen: HomeScreen,
+        }
+    },
+    {
+      initialRouteName: 'Home',
+      drawerPosition: 'left',
+      contentComponent: DrawerContent,
+      drawerOpenRoute: 'DrawerOpen',
+      drawerCloseRoute: 'DrawerClose',
+      drawerToggleRoute: 'DrawerToggle'
+    });
+
+const RootStack = createStackNavigator({
+  Drawer: { screen: Drawer },
+  Home: {
+    screen: HomeScreen
   },
-  {
-    initialRouteName: 'Home',
-  }
-);
+})
+  
 
 export default class Main extends Component {
   constructor() {
@@ -59,7 +74,7 @@ export default class Main extends Component {
 
     // The user is an Object, so they're logged in
     if (this.state.user){
-      return <RootStack />
+      return <Drawer />
     }
 
     // The user is null, so they're logged out
