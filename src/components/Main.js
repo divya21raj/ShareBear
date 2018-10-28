@@ -7,8 +7,8 @@ import firebase from 'react-native-firebase';
 import { GoogleSignin} from 'react-native-google-signin';
 
 // Local Imports
-import LoginScreen from './LoginScreen';
-import HomeScreen from './HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import HomeScreen from './screens/HomeScreen';
 import DrawerContent from './DrawerContent';
 
 

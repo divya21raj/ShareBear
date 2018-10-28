@@ -7,7 +7,7 @@ import { GoogleSigninButton } from 'react-native-google-signin';
 import { connect } from 'react-redux';
 
 // Local Imports
-import { loginUser } from '../actions';
+import { loginUser } from '../../actions';
 
 
 class LoginScreen extends Component{

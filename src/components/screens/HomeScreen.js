@@ -14,22 +14,15 @@ import {
 
 // External Library imports
 import { Button, Container, Header, Item, Input, Content, Left, Body, Title, Right, StyleProvider } from 'native-base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Local Imports
-import getTheme from '../../native-base-theme/components';
-import platform from '../../native-base-theme/variables/platform';
+import getTheme from '../../../native-base-theme/components';
+import platform from '../../../native-base-theme/variables/platform';
 
-import Icon from 'react-native-vector-icons/Ionicons'
-import Category from './HomeScreen/Category.js'
+import Category from '../reusables/Category.js';
+import FeaturedCard from '../reusables/FeaturedCard';
 
-const { height, width } = Dimensions.get('window')
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-      'Double tap R on your keyboard to reload,\n' +
-      'Shake or press menu button for dev menu',
-  });
-  
   
 export default class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
@@ -38,7 +31,7 @@ export default class HomeScreen extends Component {
         drawerIcon: ({ tintColor }) => (
           <Image
             tintColor={tintColor}
-            source={require('../assets/DrawerIcons/logo.png')}
+            source={require('../../assets/DrawerIcons/logo.png')}
             style={styles.icon}
           />
         ),
@@ -49,7 +42,7 @@ export default class HomeScreen extends Component {
         return (
             <Container>
                 <StyleProvider style={getTheme(platform)}>
-                    <Container>
+                    <View>
                         <Header noShadow style={{borderBottomWidth: 0, elevation:0}}>
                             <Left>
                                 <Button transparent onPress={() => this.props.navigation.openDrawer()}>
@@ -70,25 +63,41 @@ export default class HomeScreen extends Component {
                                 <Text>Search</Text>
                             </Button>
                         </Header>
-                    </Container>
+                    </View>
                 </StyleProvider>
 
-                <Content>
+                <Content contentContainerStyle={styles.container}>
                     <SafeAreaView style={{ flex: 1 }}>
-                        <View style={{ flex: 1 }}>
+                        <View >
                             <ScrollView scrollEventThrottle={16}>
-                                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 0 }}>
-                                    <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                        What can we help you find?
+                                    <Text style={{ fontSize: 16, fontWeight: '100', marginTop:10, paddingHorizontal: 15, color:'grey'}}>
+                                        Featured
+                                    </Text>
+                                <ScrollView
+                                    horizontal={true}
+                                    showsHorizontalScrollIndicator={false}
+                                    style={{marginTop:10}}
+                                    >
+                                    <FeaturedCard imageUri={require('../../assets/bs.jpg')}/>
+                                    <FeaturedCard imageUri={require('../../assets/mal.jpg')}/>
+                                    <FeaturedCard imageUri={require('../../assets/sr.jpg')}/>
+                                    <FeaturedCard imageUri={require('../../assets/sn.png')}/>
+                                    <FeaturedCard imageUri={require('../../assets/venom.jpeg')}/>
+                                    <FeaturedCard imageUri={require('../../assets/inc.jpg')}/>
+                                </ScrollView>
+                                
+                                <View style={{ flex: 1, backgroundColor: 'white', marginTop: 10 }}>
+                                    <Text style={{ fontSize: 16, fontWeight: '100', paddingHorizontal: 15, color:'grey'}}>
+                                        Recommended
                                     </Text>
 
-                                    <View style={{ height: 130, marginTop: 20 }}>
+                                    <View style={{ height: 130, marginTop: 10 }}>
                                         <ScrollView
                                             horizontal={true}
                                             showsHorizontalScrollIndicator={false}
                                         >
                                             <Category imageUri={require('../../assets/home.jpg')}
-                                                name="Home"
+                                                name="Homer"
                                             />
                                             <Category imageUri={require('../../assets/experiences.jpg')}
                                                 name="Experiences"
