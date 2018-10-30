@@ -9,6 +9,7 @@ import { GoogleSignin} from 'react-native-google-signin';
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
+import ItemDetailScreen from './screens/ItemDetailScreen';
 import DrawerContent from './DrawerContent';
 
 
@@ -33,6 +34,8 @@ const RootStack = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
+  ItemDetail: {
+    screen: ItemDetailScreen },
 })
   
 
@@ -74,7 +77,7 @@ export default class Main extends Component {
 
     // The user is an Object, so they're logged in
     if (this.state.user){
-      return <Drawer />
+      return <RootStack />
     }
 
     // The user is null, so they're logged out

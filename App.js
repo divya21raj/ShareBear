@@ -10,7 +10,6 @@ import ReduxThunk from 'redux-thunk';
 import Main from './src/components/Main';
 import reducers from './src/reducers';
 
-
 export default class App extends Component {
 
   render() {

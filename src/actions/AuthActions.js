@@ -1,6 +1,5 @@
 import { LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER } from './types';
 
-
 import firebase from 'react-native-firebase';
 import { GoogleSignin } from 'react-native-google-signin';
 
@@ -49,6 +48,4 @@ const loginUserSuccess = (dispatch, user) => {
         type: LOGIN_USER_SUCCESS, 
         payload: user
     });
-
-    Actions.main();
 }
