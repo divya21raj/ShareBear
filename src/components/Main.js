@@ -8,7 +8,7 @@ import { GoogleSignin} from 'react-native-google-signin';
 
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ItemDetailScreen from './screens/ItemDetailScreen';
 import DrawerContent from './DrawerContent';
 
@@ -30,13 +30,20 @@ const Drawer = createDrawerNavigator({
     });
 
 const RootStack = createStackNavigator({
-  Drawer: { screen: Drawer },
-  Home: {
-    screen: HomeScreen
+    Drawer: { screen: Drawer },
+    Home: {
+      screen: HomeScreen
+    },
+    ItemDetail: {
+      screen: ItemDetailScreen },
   },
-  ItemDetail: {
-    screen: ItemDetailScreen },
-})
+  {
+    headerMode: 'none',
+    navigationOptions: {
+      headerVisible: false,
+    }
+  }
+);
   
 
 export default class Main extends Component {
