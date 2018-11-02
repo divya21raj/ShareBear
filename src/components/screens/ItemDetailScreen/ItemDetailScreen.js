@@ -17,8 +17,8 @@ import { Button, Container, Header, Item, Input, Content, Left, Body, Title, Rig
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Local Imports
-import getTheme from '../../../native-base-theme/components';
-import platform from '../../../native-base-theme/variables/platform';
+import getTheme from '../../../../native-base-theme/components';
+import platform from '../../../../native-base-theme/variables/platform';
 
 export default class ItemDetailScreen extends Component{
     render() {

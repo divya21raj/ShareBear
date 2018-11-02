@@ -9,7 +9,7 @@ import { GoogleSignin} from 'react-native-google-signin';
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import ItemDetailScreen from './screens/ItemDetailScreen';
+import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
 import DrawerContent from './DrawerContent';
 
 

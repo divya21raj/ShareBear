@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
-import {View, Image} from 'react-native';
+import { Image } from 'react-native';
 
-import {Card } from 'native-base';
+import { Card } from 'native-base';
+
+const horizontalMargin = 20;
+const slideWidth = 280;
+
+const itemWidth = slideWidth + horizontalMargin * 2;
+const itemHeight = 200;
+
+const styles = {
+    slide: {
+        width: itemWidth,
+        height: itemHeight,
+        marginTop: 10,
+        marginBottom: 10,
+    },
+    slideInnerContainer: {
+        width: null,
+        flex: 1,
+        height: null,
+        resizeMode: 'cover',
+    }
+}
 
 export default class FeaturedCard extends Component{
     render() {
         return(
-            <Card style={{ height: 200, width: 300, marginLeft: 5 }}>
-                 <Image source={this.props.imageUri}
-                        style={{ flex: 1, width: null, height: null, resizeMode: 'cover', borderRadius:3 }}
-                    />
+            <Card
+                bordered={false} 
+                style={styles.slide}>
+                    <Image 
+                        style={styles.slideInnerContainer} 
+                        source={{uri: this.props.imageUri}}
+                        showSpinner={true}
+                        />
             </Card>
         );
     }

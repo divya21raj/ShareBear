@@ -13,10 +13,9 @@ import platform from '../../../../native-base-theme/variables/platform';
 
 /**
  * The props for this Header =>
- * 4.onLeftButtonPress
- * 5.onRightButtonPress
- * 5.hasSearch
- * 6.searchPlaceholder
+ * 1.onLeftButtonPress
+ * 2.onRightButtonPress
+ * 3.searchPlaceholder
  */
 
 export default class HomeScreenHeader extends Component {

@@ -14,7 +14,6 @@ import { Button, Container, Content, List, ListItem} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Local Imports
-import Category from '../../reusables/Category.js';
 import HomeScreenHeader from './HomeScreenHeader';
 import FeaturedView from './FeaturedView';
 import RecommendedView from './RecommendedView';
