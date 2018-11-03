@@ -17,33 +17,39 @@ import { Button, Container, Header, Item, Input, Content, Left, Body, Title, Rig
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Local Imports
-import getTheme from '../../../../native-base-theme/components';
-import platform from '../../../../native-base-theme/variables/platform';
+import ItemDetailScreenHeader from './ItemDetailScreenHeader';
 
 export default class ItemDetailScreen extends Component{
     render() {
-        console.log("ItemDetailScreen Render")
+        const item = this.props.navigation.getParam('item');
+        console.log(item)
         return (
             <Container>
-                <StyleProvider style={getTheme(platform)}>
-                    <View>
-                        <Header noShadow style={{borderBottomWidth: 0, elevation:0}}>
-                            <Left>
-                            <Button transparent onPress={() => this.props.navigation.navigate('Home')}>
-                                    <Icon name='arrowleft' size={25} color={'white'} />
-                            </Button>
-                            </Left>
-                            <Body>
-                                <Title>ShareBear</Title>
-                            </Body>
-                            <Right >
-                                <Icon name="ios-search" size={20} color="#ff8821" style={{paddingLeft:10, marginRight: 10 }}/>
-                                <Icon name="mail-forward" size={20} color="#ff8821" style={{paddingLeft:10, marginRight: 10 }}/>
-                            </Right>
-                        </Header>
-                    </View>
-                </StyleProvider>
+                <ItemDetailScreenHeader 
+                    leftIconName='ios-arrow-back'
+                    onLeftButtonPress={() => this.props.navigation.goBack()}
+                    headerTitle={item.title}
+                />
+                <Content>
+                    <SafeAreaView style={{ flex: 1 }}>
+                        <ScrollView
+                            vertical={true}
+                            showsVerticalScrollIndicator={false}
+                        >
+                        <View style={styles.itemContainer}>
+
+                        </View>
+                        </ScrollView>
+                    </SafeAreaView>
+                </Content>
             </Container>
         );
+    }
+}
+
+const styles = {
+    itemContainer: {
+        height: 100,
+        backkgroundColor: 'blue',
     }
 }

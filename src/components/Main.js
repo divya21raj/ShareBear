@@ -13,7 +13,6 @@ import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
 import DrawerContent from './DrawerContent';
 
 
-// The Root of our Stack Navigation
 const Drawer = createDrawerNavigator({
         // For each screen that you can navigate to, create a new entry like this:
         Home: {
@@ -28,7 +27,8 @@ const Drawer = createDrawerNavigator({
       drawerCloseRoute: 'DrawerClose',
       drawerToggleRoute: 'DrawerToggle'
     });
-
+    
+// The Root of our Stack Navigation
 const RootStack = createStackNavigator({
     Drawer: { screen: Drawer },
     Home: {

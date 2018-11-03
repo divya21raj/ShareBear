@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
             <Container>
                 
                 <HomeScreenHeader 
-                    leftIconName='md-menu'
+                    leftIconName='ios-menu'
                     onLeftButtonPress={() => this.props.navigation.openDrawer()}
                     searchPlaceholder={'What are you looking for?'}
                 />
@@ -49,7 +49,9 @@ export default class HomeScreen extends Component {
                             vertical={true}
                             showsVerticalScrollIndicator={false}
                         >
-                            <FeaturedView />
+                            <FeaturedView 
+                                navigation={ this.props.navigation }    
+                            />
 
                             <RecommendedView />
 

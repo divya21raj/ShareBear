@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 // External Library imports
-import { Button, Container, Header, Item, Input, Content, Left, Body, Title, Right, List,
-    ListItem, StyleProvider } from 'native-base';
+import { Button, Header, Item, Input, Left, Body, Title, Right, StyleProvider } from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Local Imports
@@ -17,7 +16,6 @@ import platform from '../../../../native-base-theme/variables/platform';
  * 2.onRightButtonPress
  * 3.searchPlaceholder
  */
-
 export default class HomeScreenHeader extends Component {
     render() {
         return(
