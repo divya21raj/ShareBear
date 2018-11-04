@@ -21,7 +21,7 @@ export default class HomeScreenHeader extends Component {
     render() {
         return(
             <StyleProvider style={getTheme(platform)}>  
-                <Header noShadow style={{ borderBottomWidth: 0, elevation: 0 }}>
+                <Header transparent noShadow style={{ borderBottomWidth: 0, elevation: 0 }}>
                     <Left>
                         <Button transparent onPress={this.props.onLeftButtonPress}>
                             <Icon name={this.props.leftIconName} size={25} color={'white'} />

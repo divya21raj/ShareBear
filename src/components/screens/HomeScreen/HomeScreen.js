@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 import {
-    View,
-    Text,
     StyleSheet,
     SafeAreaView,
     ScrollView,
@@ -10,8 +8,7 @@ import {
 } from "react-native";
 
 // External Library imports
-import { Button, Container, Content, List, ListItem} from 'native-base';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { Container, Content,} from 'native-base';
 
 // Local Imports
 import HomeScreenHeader from './HomeScreenHeader';
@@ -57,27 +54,10 @@ export default class HomeScreen extends Component {
 
                             <RecommendedView />
 
-                            <View style={{ flex: 1, backgroundColor: 'white', marginTop: 10 }}>
-                                <Text style={{ fontSize: 16, fontWeight: '100', paddingHorizontal: 15, color: 'grey' }}>
-                                    Get It From
-                                </Text>
-                                <Button primary onPress={() => this.props.navigation.navigate('ItemDetail')} >
-                                    <Text>  Find Now  </Text>
-                                </Button>
-                            </View>
-
-                            <View>
-                            <List>
-                                <ListItem iconLeft iconRight>
-                                    <Icon name="ios-search" size={20} color="#000000" style={{ paddingLeft: 10, marginRight: 10 }} />
-                                    <Text>Foucoult is bae</Text>
-                                    <Icon name='ios-notifications' size={20} color="#000000" style={{ paddingLeft: 10, marginRight: 10}} />
-                                </ListItem>
-                            </List>
-                            </View>
                         </ScrollView>
                     </SafeAreaView>
                 </Content>
+                
             </Container>
         );
     }
@@ -88,7 +68,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#f2f3f9',
     },
     welcome: {
         fontSize: 20,
