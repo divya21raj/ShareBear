@@ -7,7 +7,7 @@ import {Card, Thumbnail} from 'native-base';
 // Local Imports
 
 
-export default class RecommendedView extends Component {
+export default class ThumbnailList extends Component {
     render() {
         return(
             <View style={{marginTop:5, marginBottom:10}}>

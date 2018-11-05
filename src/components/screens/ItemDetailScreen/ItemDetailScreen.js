@@ -6,7 +6,7 @@ import {
 } from "react-native";
 
 // External Library imports
-import { Button, Container, H2, Text, Card, } from 'native-base';
+import { Button, Container, H2, H3, Text, Card, List, } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Image from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress/Bar';
@@ -16,13 +16,14 @@ import ReadMore from 'react-native-read-more-text';
 // Local Imports
 import ItemDetailScreenHeader from './ItemDetailScreenHeader';
 import ThumbnailList from './ThumbnailList';
+import UserCard from '../../reusables/UserCard';
 
 export default class ItemDetailScreen extends Component{
     render() {
         const item = this.props.navigation.getParam('item');
         console.log(item)
         return (
-            <Container>
+            <Container style={{backgroundColor: '#ced5e0'}}>
                 <StatusBar
                     backgroundColor={'transparent'}
                     translucent
@@ -75,6 +76,29 @@ export default class ItemDetailScreen extends Component{
                                 <ThumbnailList />
                             </View>
                     </Card>
+                    <View>
+                        <Card style={styles.getItFromContainer}>
+                            <H3 style={styles.getItFromText} font-size={10}>
+                                Get It From
+                            </H3>
+                            <List>
+                                <UserCard
+                                    name='Sooryanarayanan'
+                                    imageUri={item.imageUri}
+                                    subtitle='107 2B'
+                                    rightIconName='ios-share-alt'
+                                    onRightButtonPress={()=>console.log('request')}
+                                />
+                                <UserCard
+                                    name='Hiran PY'
+                                    imageUri={item.imageUri}
+                                    subtitle='208 1B'
+                                    rightIconName='ios-share-alt'
+                                    onRightButtonPress={()=>console.log('request')}
+                                    />
+                            </List>
+                        </Card>
+                    </View>
                 </ParallaxScrollView>
             </Container>
         );
@@ -110,13 +134,7 @@ const styles = {
         paddingLeft:10,
         paddingRight:10,
         paddingBottom: 10,
-    },
-    imageContainer: {
-        flex: 0.55,
-        marginTop:10,
-        marginLeft:5,
-        height: 300,
-        width: null,
+        marginBottom:15,
     },
     infoContainer: {
         flex: 1,
@@ -140,4 +158,14 @@ const styles = {
         alignSelf: 'center',
         color: '#333438'
     },
+    getItFromContainer:{
+        marginTop:0,
+        paddingBottom:20,
+    },
+    getItFromText:{
+        color: '#514d47',
+        justifyContent: 'flex-start',
+        marginLeft:15,
+        marginTop:10,
+    }
 }

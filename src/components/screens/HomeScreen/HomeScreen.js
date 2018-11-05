@@ -14,6 +14,8 @@ import { Container, Content,} from 'native-base';
 import HomeScreenHeader from './HomeScreenHeader';
 import FeaturedView from './FeaturedView';
 import RecommendedView from './RecommendedView';
+import CategoryView from './CategoryView';
+import PromoCard from './PromoCard';
 
 export default class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
@@ -46,13 +48,18 @@ export default class HomeScreen extends Component {
                             vertical={true}
                             showsVerticalScrollIndicator={false}
                         >
+                            <CategoryView />
+                            
                             <FeaturedView 
                                 navigation={ this.props.navigation }    
                             />
 
                             <RecommendedView />
 
-                            <RecommendedView />
+                            <PromoCard 
+                                image={require('../../../assets/breeze.png')}
+                                url='https://snu-breeze.com'
+                            />
 
                         </ScrollView>
                     </SafeAreaView>
