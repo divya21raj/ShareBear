@@ -5,6 +5,7 @@ import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
 // External Library Imports
 import firebase from 'react-native-firebase';
 import { GoogleSignin } from 'react-native-google-signin';
+import { connect } from 'react-redux';
 
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
@@ -12,6 +13,8 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
 import ItemListScreen from './screens/ItemListScreen/ItemListScreen';
 import DrawerContent from './DrawerContent';
+
+import { postUser } from '../actions';
 
 
 const Drawer = createDrawerNavigator({
@@ -49,7 +52,7 @@ const RootStack = createStackNavigator({
 );
   
 
-export default class Main extends Component {
+class Main extends Component {
   constructor() {
     super();
     GoogleSignin.configure();
@@ -70,6 +73,9 @@ export default class Main extends Component {
         loading: false,
         user,
       });
+      if(user!=null && !this.props.loading){
+        this.props.postUser(user._user);
+      }
     });
   }
 
@@ -86,7 +92,7 @@ export default class Main extends Component {
     if (this.state.loading) return null;
 
     // The user is an Object, so they're logged in
-    if (this.state.user){
+    if (this.state.user){      
       return <RootStack />
     }
 
@@ -94,3 +100,13 @@ export default class Main extends Component {
     return <LoginScreen />
   }
 }
+
+const mapStateToProps = state => {
+  return({
+      response: state.auth.response,
+      error: state.auth.error,
+      loading: state.auth.loading
+  });
+}
+
+export default connect(mapStateToProps, { postUser })(Main);

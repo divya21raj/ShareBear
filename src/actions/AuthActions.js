@@ -1,7 +1,11 @@
-import { LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER } from './types';
+import { LOGIN_USER_SUCCESS, LOGIN_USER_FAIL, LOGIN_USER, 
+            POST_USER, POST_USER_FAIL, POST_USER_SUCCESS} from './types';
 
+
+import axios from 'axios';
 import firebase from 'react-native-firebase';
 import { GoogleSignin } from 'react-native-google-signin';
+import {BASE_URL} from '../const';
 
 
 export const loginUser = () => {
@@ -37,6 +41,27 @@ export const loginUser = () => {
     };
 };
 
+export const postUser = user =>{
+    url=BASE_URL+'users/';
+    
+    return (dispatch) => {
+        dispatch({type: POST_USER});
+        
+        console.log(`Posting on Url=${url}`)
+        console.log(user)
+
+        axios.post(url, user)
+        .then(function (response) {
+            console.log(response);
+            postUserSuccess(dispatch, response);
+        })
+        .catch(function (error) {
+            console.log({... error});
+            postUserFailed(dispatch);
+        });
+    }
+}
+
 const loginUserFailed = (dispatch) => {
     dispatch({
         type: LOGIN_USER_FAIL
@@ -47,5 +72,18 @@ const loginUserSuccess = (dispatch, user) => {
     dispatch({
         type: LOGIN_USER_SUCCESS, 
         payload: user
+    });
+}
+
+const postUserFailed = (dispatch) => {
+    dispatch({
+        type: POST_USER_FAIL
+    })
+}
+
+const postUserSuccess = (dispatch, response) => {
+    dispatch({
+        type: POST_USER_SUCCESS, 
+        payload: response
     });
 }

@@ -19,8 +19,7 @@ import platform from '../../../native-base-theme/variables/platform';
 export default class UserCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
