@@ -8,11 +8,7 @@ class ItemCard extends Component{
     render() {
         const {item, rightIconName} = this.props;
         return(
-            <TouchableOpacity
-                activeOpacity={0.9}
-                onPress={() => this.props.navigation.navigate('ItemDetail', {'item': item})}
-            >
-                <ListItem avatar>
+            <ListItem avatar onPress={() => this.props.navigation.navigate('ItemDetail', {'item': item})}>
                 <Left>
                     <Thumbnail source={item.thumbnail} />
                 </Left>
@@ -27,8 +23,7 @@ class ItemCard extends Component{
                         <Icon style={{ padding: 0, }} name={rightIconName} color={'black'} />
                     </Button>
                 </Right>
-                </ListItem>
-            </TouchableOpacity>
+            </ListItem>
         );
     }
 }
