@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
+import { withNavigation } from 'react-navigation';
+
 //Local Imports
 import ImageWithTitleCard from '../../reusables/ImageWithTitleCard';
 
-export default class CategoryView extends Component {
-  
+class CategoryView extends Component {
+    
     state = { items: [
         {
             title: 'Media',
@@ -63,7 +65,7 @@ export default class CategoryView extends Component {
         <ImageWithTitleCard 
                 key={item.title}
                 item={item}
-                onPress= {() => navigation.navigate('ItemList', {'itemList': item})}
+                onPress= {() => this.props.navigation.navigate('ItemList', {'itemList': item})}
             />
     );
     });
@@ -82,3 +84,4 @@ export default class CategoryView extends Component {
         );
   }
 }
+export default withNavigation(CategoryView);

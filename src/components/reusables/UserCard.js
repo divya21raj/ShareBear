@@ -28,7 +28,7 @@ export default class UserCard extends Component {
         <StyleProvider style={getTheme(platform)}>
             <ListItem avatar>
                 <Left>
-                    <Thumbnail source={{ uri: this.props.imageUri }} />
+                    <Thumbnail source={this.props.thumbnail} />
                 </Left>
                 <Body style={{marginTop:5}}>
                     <Text style={{fontSize:18, paddingBottom:5, paddingTop:0, fontWeight:'400'}}>{this.props.name}</Text>

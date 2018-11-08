@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 import {
     View,
-    StatusBar
+    StatusBar,
+    Image,
 } from "react-native";
 
 // External Library imports
 import { Button, Container, H2, H3, Text, Card, List, } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import Image from 'react-native-image-progress';
+
 import ProgressBar from 'react-native-progress/Bar';
 import ReadMore from 'react-native-read-more-text';
 
@@ -34,7 +35,7 @@ export default class ItemDetailScreen extends Component{
                     renderForeground={() => (
                         <Image 
                             style={styles.slideInnerContainer} 
-                            source={{uri: item.imageUri}}
+                            source={item.thumbnail}
                             indicator={ProgressBar}
                             indicatorProps={{
                                 size: 80,
@@ -84,14 +85,14 @@ export default class ItemDetailScreen extends Component{
                             <List>
                                 <UserCard
                                     name='Sooryanarayanan'
-                                    imageUri={item.imageUri}
+                                    thumbnail={item.thumbnail}
                                     subtitle='107 2B'
                                     rightIconName='ios-share-alt'
                                     onRightButtonPress={()=>console.log('request')}
                                 />
                                 <UserCard
                                     name='Hiran PY'
-                                    imageUri={item.imageUri}
+                                    thumbnail={item.thumbnail}
                                     subtitle='208 1B'
                                     rightIconName='ios-share-alt'
                                     onRightButtonPress={()=>console.log('request')}

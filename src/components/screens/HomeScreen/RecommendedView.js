@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
+
 // External Library Imports
+import { withNavigation } from 'react-navigation';
 import {Card} from 'native-base';
 
 // Local Imports
 import ImageWithTitleCard from '../../reusables/ImageWithTitleCard.js';
 
-export default class RecommendedView extends Component {
+class RecommendedView extends Component {
     
     state = { items: [
         {
@@ -60,7 +62,7 @@ export default class RecommendedView extends Component {
             <ImageWithTitleCard 
                     key={item.title}
                     item={item}
-                    onPress= {() => navigation.navigate('ItemDetail', {'itemList': item})}
+                    onPress= {() => this.props.navigation.navigate('ItemDetail', {'item': item})}
                 />
         );
         });
@@ -86,3 +88,4 @@ export default class RecommendedView extends Component {
         );
     }
 }
+export default withNavigation(RecommendedView);

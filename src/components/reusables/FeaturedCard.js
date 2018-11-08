@@ -41,7 +41,7 @@ class FeaturedCard extends Component{
                     style={styles.slide}>
                         <Image 
                             style={styles.slideInnerContainer} 
-                            source={{uri: item.imageUri}}
+                            source={item.thumbnail}
                             indicator={ProgressBar}
                             indicatorProps={{
                                 size: 80,
