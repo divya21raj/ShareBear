@@ -6,6 +6,7 @@ import { Icon, Button, StyleProvider, ListItem, Left, Right, Body, Content, Thum
 // Local Imports
 import getTheme from '../../../native-base-theme/components';
 import platform from '../../../native-base-theme/variables/platform';
+
 /**
  * The props for this Header =>
  * 1.onRightButtonPress

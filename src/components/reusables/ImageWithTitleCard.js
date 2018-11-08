@@ -10,21 +10,24 @@ import { withNavigation } from 'react-navigation';
 
 /**
  * Props->
+ * item-{
  * width 
  * height
  * imageUri
  * title
- * resize
  * margin
+ * resize
+ * }
+ * onPress
  */
 
 class ImageWithTitleCard extends Component{
     render() {
-        const {item, navigation} = this.props;
+        const {item, navigation, onPress} = this.props;
     return (
         <TouchableOpacity
                 activeOpacity={0.9}
-                onPress={() => navigation.navigate('ItemList', {'itemList': item})}
+                onPress={onPress}
             >
             <View style={{ width: item.width, marginLeft: item.margin, borderWidth: 0, borderColor: '#db9627' }}>
                 <View style={{ flex: 2 }}>

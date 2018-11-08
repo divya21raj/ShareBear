@@ -4,7 +4,7 @@ import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
 
 // External Library Imports
 import firebase from 'react-native-firebase';
-import { GoogleSignin} from 'react-native-google-signin';
+import { GoogleSignin } from 'react-native-google-signin';
 
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
@@ -38,7 +38,7 @@ const RootStack = createStackNavigator({
     ItemDetail: {
       screen: ItemDetailScreen },
     ItemList: {
-        screen: ItemListScreen },
+      screen: ItemListScreen },
   },
   {
     headerMode: 'none',

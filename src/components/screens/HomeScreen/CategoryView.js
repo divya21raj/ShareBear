@@ -63,6 +63,7 @@ export default class CategoryView extends Component {
         <ImageWithTitleCard 
                 key={item.title}
                 item={item}
+                onPress= {() => navigation.navigate('ItemList', {'itemList': item})}
             />
     );
     });

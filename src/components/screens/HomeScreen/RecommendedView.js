@@ -60,6 +60,7 @@ export default class RecommendedView extends Component {
             <ImageWithTitleCard 
                     key={item.title}
                     item={item}
+                    onPress= {() => navigation.navigate('ItemDetail', {'itemList': item})}
                 />
         );
         });
