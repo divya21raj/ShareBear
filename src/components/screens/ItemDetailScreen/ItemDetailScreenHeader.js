@@ -17,7 +17,7 @@ import platform from '../../../../native-base-theme/variables/platform';
  * 3.searchPlaceholder
  * 4.headerTitle
  */
-export default class HomeScreenHeader extends Component {
+export default class ItemDetailScreenHeader extends Component {
     render() {
         return(
             <StyleProvider style={getTheme(platform)}>  

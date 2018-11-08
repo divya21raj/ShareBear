@@ -8,6 +8,63 @@ import {Card} from 'native-base';
 import ImageWithTitleCard from '../../reusables/ImageWithTitleCard.js';
 
 export default class RecommendedView extends Component {
+    
+    state = { items: [
+        {
+            title: 'Black Sails',
+            thumbnail: require('../../../assets/bs.jpg'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        },
+        {
+            title: 'WWE 2k18',
+            thumbnail: require('../../../assets/sr.jpg'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        },
+        {
+            title: 'Supernatural',
+            thumbnail: require('../../../assets/sn.png'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        },
+        {
+            title: 'Maleficent',
+            thumbnail: require('../../../assets/mal.jpg'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        },
+        {
+            title: 'Resturant',
+            thumbnail: require('../../../assets/restaurant.jpg'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        },
+        {
+            title: 'Venom',
+            thumbnail: require('../../../assets/venom.jpeg'),
+            height: 100,
+            margin: 10,
+            width: 130,
+        }
+    ]};
+
+    renderItems() {
+        return this.state.items.map((item) => {
+        return (
+            <ImageWithTitleCard 
+                    key={item.title}
+                    item={item}
+                />
+        );
+        });
+    }
+    
     render() {
         return(
             <View style={{marginTop:5, marginBottom:10}}>
@@ -20,48 +77,7 @@ export default class RecommendedView extends Component {
                             horizontal={true}
                             showsHorizontalScrollIndicator={false}
                         >
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/bs.jpg')}
-                                title="Black Sails"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/sr.jpg')}
-                                title="WWE 2k18"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/sn.png')}
-                                title="Supernatural"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/mal.jpg')}
-                                title="Maleficent"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/restaurant.jpg')}
-                                title="Resturant"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
-                            <ImageWithTitleCard 
-                                imageUri={require('../../../assets/venom.jpeg')}
-                                title="Venom"
-                                height={100}
-                                margin={10}
-                                width={130}
-                            />
+                        {this.renderItems()}
                         </ScrollView>
                     </View>
                 </Card>

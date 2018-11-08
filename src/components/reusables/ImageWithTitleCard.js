@@ -5,6 +5,8 @@ import {
     StyleSheet,
     Image
 } from "react-native";
+import { TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
 /**
  * Props->
@@ -16,23 +18,30 @@ import {
  * margin
  */
 
-class ImageWithTitleCard extends Component {
+class ImageWithTitleCard extends Component{
     render() {
-        return (
-            <View style={{ width: this.props.width, marginLeft: this.props.margin, borderWidth: 0, borderColor: '#db9627' }}>
+        const {item, navigation} = this.props;
+    return (
+        <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('ItemList', {'itemList': item})}
+            >
+            <View style={{ width: item.width, marginLeft: item.margin, borderWidth: 0, borderColor: '#db9627' }}>
                 <View style={{ flex: 2 }}>
-                    <Image source={this.props.imageUri}
-                        style={{flex: 1, width: null, height: this.props.height, resizeMode: this.props.resize, borderRadius:3 }}
+                    <Image source={item.thumbnail}
+                        style={{flex: 1, width: null, height: item.height, resizeMode: item.resizeMode, borderRadius:3 }}
                     />
                 </View>
                 <View style={{ flex: 1, alignSelf: 'center', paddingTop: 5, marginBottom:0, borderRadius:3 }}>
-                    <Text style={{fontWeight:'300', color:'black'}}>{this.props.title}</Text>
+                    <Text style={{fontWeight:'300', color:'black'}}>{item.title}</Text>
                 </View>
             </View>
+            </TouchableOpacity>
         );
     }
 }
-export default ImageWithTitleCard;
+
+export default withNavigation(ImageWithTitleCard);
 
 const styles = StyleSheet.create({
     container: {

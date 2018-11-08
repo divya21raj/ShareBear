@@ -10,6 +10,7 @@ import { GoogleSignin} from 'react-native-google-signin';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
+import ItemListScreen from './screens/ItemListScreen/ItemListScreen';
 import DrawerContent from './DrawerContent';
 
 
@@ -36,6 +37,8 @@ const RootStack = createStackNavigator({
     },
     ItemDetail: {
       screen: ItemDetailScreen },
+    ItemList: {
+        screen: ItemListScreen },
   },
   {
     headerMode: 'none',

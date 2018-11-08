@@ -56,7 +56,6 @@ class FeaturedCard extends Component{
     }
 }
 
-
 // withNavigation returns a component that wraps MyBackButton and passes in the
 // navigation prop
 export default withNavigation(FeaturedCard);
