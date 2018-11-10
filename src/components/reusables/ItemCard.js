@@ -20,7 +20,7 @@ class ItemCard extends Component{
                 </Body>
                 <Right>
                     <Button size={10} transparent>
-                        <Icon style={{ padding: 0, }} name={rightIconName} color={'black'} />
+                        <Icon style={{ padding: 0, }} name={rightIconName} color={'#ff8821'} />
                     </Button>
                 </Right>
             </ListItem>

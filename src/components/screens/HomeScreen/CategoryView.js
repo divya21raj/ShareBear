@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
+// External Library Imports
 import { withNavigation } from 'react-navigation';
 
 //Local Imports
@@ -51,7 +52,7 @@ class CategoryView extends Component {
         },
         {
             title: 'Others',
-            thumbnail: require('../../../assets/others.png'),
+            thumbnail: require('../../../assets/others.jpg'),
             height: 35,
             margin: 0,
             width: 60,
