@@ -7,7 +7,7 @@ import {
 } from "react-native";
 
 // External Library imports
-import { Button, Container, H2, H3, Text, Card, List, } from 'native-base';
+import { Container, H2, H3, Text, Card, List, } from 'native-base';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 
 import ProgressBar from 'react-native-progress/Bar';

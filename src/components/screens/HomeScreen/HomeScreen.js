@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 // External Library imports
-import { Container, Content,} from 'native-base';
+import { Container, Content, Fab, Icon, Button} from 'native-base';
 
 // Local Imports
 import HomeScreenHeader from './HomeScreenHeader';
@@ -16,6 +16,7 @@ import FeaturedView from './FeaturedView';
 import RecommendedView from './RecommendedView';
 import CategoryView from './CategoryView';
 import PromoCard from './PromoCard';
+import PostNewFab from './PostNewFab';
 
 export default class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
@@ -62,6 +63,9 @@ export default class HomeScreen extends Component {
                             />
 
                         </ScrollView>
+                        
+                        <PostNewFab />
+                        
                     </SafeAreaView>
                 </Content>
                 

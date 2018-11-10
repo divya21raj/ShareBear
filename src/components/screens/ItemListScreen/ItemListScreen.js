@@ -85,7 +85,7 @@ class ItemListScreen extends Component {
                         <TouchableOpacity activeOpacity={0.9}
                         //onPress
                         >
-                            <Icon name='ios-list' size={40} color={'black'} />
+                            <Icon name='ios-apps' size={40} color={'#ff8821'} />
                         </TouchableOpacity>
                     </View>
 
@@ -93,8 +93,8 @@ class ItemListScreen extends Component {
                         <TouchableOpacity activeOpacity={0.9}
                         //onPress
                         >
-                            <Icon name='logo-tux' size={35} color={'black'} flexDirection='row' >
-                            <Text al> Sort </Text>
+                            <Icon name='md-funnel' size={35} color={'#ff8821'} flexDirection='row' >
+                            <Text style={{margin:5}}> Sort </Text>
                             </Icon>
                         </TouchableOpacity>
                     </View>
@@ -103,7 +103,7 @@ class ItemListScreen extends Component {
                         <TouchableOpacity activeOpacity={0.9}
                         //onPress
                         >
-                            <Icon name='logo-reddit' size={35} color={'black'} flexDirection='row'>
+                            <Icon name='ios-funnel' size={35} color={'#ff8821'} flexDirection='row'>
                             <Text> Filter </Text>
                             </Icon>
                         </TouchableOpacity>
@@ -120,7 +120,7 @@ class ItemListScreen extends Component {
             </Container>
         );
     }
-    //<Icon name='ios-grid' size={40} style={{textAlign: "center"}} color={'black'} />
+    //<Icon name='ios-grid' size={40} style={{textAlign: "center"}} color={'#ff8821'} />
 }
 export default withNavigation(ItemListScreen);
 const styles= {

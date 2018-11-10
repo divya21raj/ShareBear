@@ -12,6 +12,8 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
 import ItemListScreen from './screens/ItemListScreen/ItemListScreen';
+import PostNewChoice from './screens/PostNewScreen/PostNewChoice';
+import PostNewSearch from './screens/PostNewScreen/PostNewSearch';
 import DrawerContent from './DrawerContent';
 
 import { postUser } from '../actions';
@@ -42,6 +44,10 @@ const RootStack = createStackNavigator({
       screen: ItemDetailScreen },
     ItemList: {
       screen: ItemListScreen },
+    PostNewChoice: {
+      screen: PostNewChoice },
+    PostNewSearch: {
+      screen: PostNewSearch },
   },
   {
     headerMode: 'none',
