@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 // Local Imports
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
+import PreferencesScreen from './screens/PreferencesScreen/PreferencesScreen';
 import ItemDetailScreen from './screens/ItemDetailScreen/ItemDetailScreen';
 import ItemListScreen from './screens/ItemListScreen/ItemListScreen';
 import PostNewChoice from './screens/PostNewScreen/PostNewChoice';
@@ -36,12 +37,18 @@ const Drawer = createDrawerNavigator({
     
 // The Root of our Stack Navigation
 const RootStack = createStackNavigator({
-    Drawer: { screen: Drawer },
+    Preferences: {
+      screen: PreferencesScreen
+    },  
+    Drawer: { 
+      screen: Drawer
+    },
     Home: {
       screen: HomeScreen
     },
     ItemDetail: {
-      screen: ItemDetailScreen },
+      screen: ItemDetailScreen 
+    },
     ItemList: {
       screen: ItemListScreen },
     PostNewChoice: {
